@@ -1,0 +1,123 @@
+.header {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  background-color: rgb(196, 196, 196);
+  grid-area: header;
+}
+
+.main__title {
+  display: grid;
+  grid-area: 1/1/2/3;
+  align-content: center;
+  justify-items: center;
+}
+.main__section1 {
+  display: grid;
+  background-color: rgba(224, 183, 79, 0.748);
+  align-content: center;
+  justify-items: center;
+  margin: 8px;
+}
+.main__section2 {
+  background-color: rgba(224, 183, 79, 0.748);
+  display: grid;
+  grid-area: 3/1/4/3;
+  align-content: center;
+  justify-items: center;
+  margin: 8px;
+}
+.aside {
+  background-color: rgba(148, 186, 144, 0.907);
+  display: grid;
+  padding-top: 8%;
+  justify-items: center;
+  grid-area: aside;
+}
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgb(196, 196, 196);
+  grid-area: footer;
+}
+.footer__section {
+  background-color: white;
+  margin: 5%;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .grid {
+    display: grid;
+    font-size: 0.8em;
+    width: 100vw;
+    height: 70vh;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "footer footer footer";
+  }
+  .main {
+    display: grid;
+    grid-area: main;
+    grid-template-areas:
+      "main__block aside"
+      "main__block aside";
+  }
+  .main__block {
+    background-color: rgba(226, 225, 133, 0.873);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    grid-area: main__block;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .grid {
+    display: grid;
+    font-size: 0.8em;
+    width: 100vw;
+    height: 70vh;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "footer footer footer";
+  }
+  .main {
+    display: grid;
+    grid-area: main;
+    grid-template-areas:
+      "main__block aside"
+      "main__block aside";
+  }
+  .main__block {
+    background-color: rgba(226, 225, 133, 0.873);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    grid-area: main__block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    display: none;
+  }
+  .grid {
+    height: 90vh;
+  }
+  .header {
+    height: 8vh;
+  }
+  .main {
+    display: grid;
+    grid-area: main;
+    grid-template-areas:
+      "main__block main__block"
+      "aside aside";
+  }
+  .main__block {
+    background-color: rgba(226, 225, 133, 0.873);
+    grid-area: main__block;
+  }
+}
